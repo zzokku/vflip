@@ -1,0 +1,76 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+
+public class Multipliers : MonoBehaviour
+{
+    // Reference to theBoard script
+    public theBoard TheBoard;
+    // Array to be assigned to current board
+    int[] currentBoard;
+    // 24 ints long points list which stores all multipliers per rows and columns
+    public List<int> points = new List<int>();
+    // xCount = count of multipliers over 0, mineCount = count of multipliers < 1
+    int i, j , xCount, mineCount;
+
+
+
+    void Start()
+    {
+        TheBoard.generateBoard();
+        currentBoard = TheBoard.board;
+        assignMultipliers();
+    }
+    // Getting the sums of multipliers and "mines" per rows and columns.
+    public List<int> sumRC(){
+        // Rows
+        i=0;
+        while (i!=24){
+            xCount = 0;
+            mineCount = 0;
+            for(j=0;j<4;j++){
+                if (currentBoard[i] != 0){
+                   xCount += currentBoard[i];
+               }
+               else {
+                mineCount += 1;
+               }
+               i+=1;
+            }
+            points.Add(xCount);
+            points.Add(mineCount);
+        }
+
+        // Columns
+        for (i=0;i<4;i++){
+            xCount = 0;
+            mineCount = 0;
+            j = i;
+            while (j<20){
+                if (currentBoard[j] != 0){
+                xCount += currentBoard[j];
+                }
+                else {
+                mineCount += currentBoard[j];
+                }
+                j+=5;
+            }
+            points.Add(xCount);
+            points.Add(mineCount);
+        }
+        return points;
+   }
+   // 
+   void assignMultipliers(){
+       // Generated points list object.
+       points = sumRC();
+       j=0;
+       // Iterating through all children (text objects) and assigning xCount and mineCount to them from points List object.
+       foreach (Transform child in this.gameObject.transform) {
+           child.gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = points[j].ToString() + "\n" + points[j+1].ToString();
+           j+=2;
+           }
+   }
+}
