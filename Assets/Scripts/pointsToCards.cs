@@ -10,6 +10,7 @@ public class pointsToCards : MonoBehaviour
     public theBoard boardScript;
     public Sprite flippedSprite;
     public List<GameObject> Cards;
+    public List<int> flippedCards;
     public Button thisBtn;
 
     void Start(){
