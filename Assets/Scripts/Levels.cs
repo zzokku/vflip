@@ -7,9 +7,9 @@ using UnityEngine;
 public class Levels : MonoBehaviour
 {
     public int Level;
-    
-    void Start()
-    {
-        
-    }   
+    public theBoard boardScript;
+
+    public void LevelUp(){
+        Debug.Log("Level UP");
+    }
 }

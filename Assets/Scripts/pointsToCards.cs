@@ -8,6 +8,7 @@ public class pointsToCards : MonoBehaviour
 {
     public GameObject cardParent;
     public theBoard boardScript;
+    public Coins coinsScript;
     public Sprite flippedSprite;
     public List<GameObject> Cards;
     public List<int> flippedCards;
@@ -21,8 +22,10 @@ public class pointsToCards : MonoBehaviour
     }
     
     public void flipCard(){
-        Button thisBtn = this.gameObject.GetComponent<Button>();
+        //Button thisBtn = this.gameObject.GetComponent<Button>();
+        // Switching card sprite to flippedSprite
         thisBtn.image.sprite = flippedSprite;
+        flippedCards.Add(boardScript.board[Cards.IndexOf(this.gameObject)]);
         // Adding the flipped card multiplier text to buttons text attribute.
         this.gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = boardScript.board[Cards.IndexOf(this.gameObject)].ToString();
     }
