@@ -12,6 +12,8 @@ git clone https://github.com/zzokku/vflip.git
 ````
 and open the folder in unity.
 
+or
+
 to get look at the source code navigate to Assets -> Scripts.
 
 https://github.com/zzokku/vflip/tree/master/Assets/Scripts
