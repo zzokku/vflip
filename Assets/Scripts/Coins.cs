@@ -7,7 +7,7 @@ public class Coins : MonoBehaviour
 {
     public Levels levelScript;
     public theBoard boardScript;
-    public int currentCoins, flippedOverOne, int overOne = 0;
+    public int currentCoins, flippedOverOne, overOne = 0;
     public GameObject coinText;
     public bool started = false;
     
@@ -21,7 +21,7 @@ public class Coins : MonoBehaviour
     }
     
     //Multiply the current coins
-    void CardFlip(int multiplier){
+    public void CardFlip(int multiplier){
         if (multiplier==0){
             Debug.Log("GAME OVER");
             Reset();
@@ -40,7 +40,7 @@ public class Coins : MonoBehaviour
         started = true;
     }
 
-    void Reset(){
+    public void Reset(){
         // Back to base level and coins
         levelScript.Level = 1;
         currentCoins = 0;

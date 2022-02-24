@@ -25,7 +25,7 @@ public class pointsToCards : MonoBehaviour
         // Switching card sprite to flippedSprite
         thisBtn.image.sprite = flippedSprite;
         // Function to multiply coins or lose the game.
-        coinScript.CardFlip();
+        coinScript.CardFlip(boardScript.board[Cards.IndexOf(this.gameObject)]);
         // Adding the flipped card multiplier text to buttons text attribute.
         this.gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = boardScript.board[Cards.IndexOf(this.gameObject)].ToString();
     }
