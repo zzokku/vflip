@@ -11,7 +11,7 @@ public class theBoard : MonoBehaviour
         {5, 2},
         {6, 0}
     };
-    
+    // The Board
     public int[] board = {
         1,1,1,1,1,
         1,1,1,1,1,
@@ -41,12 +41,5 @@ public class theBoard : MonoBehaviour
                 }
             
         }
-        Debug.Log("BOARD!!!");
-         foreach (var item in board)
-        {
-            Debug.Log(item);
-        } 
-        Debug.Log("MULTIPLIERS!");
-
     }    
 }

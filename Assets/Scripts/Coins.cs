@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class Coins : MonoBehaviour
 {
     public Levels levelScript;
+    public Multipliers multScript;
     public theBoard boardScript;
     public int currentCoins, flippedOverOne, overOne = 0;
     public GameObject coinText;
     public bool started = false;
+    public bool GO = false;
     
     void Start(){
         //All multipliers over one to recognize when player has flipped all over one multipliers.
@@ -24,7 +26,9 @@ public class Coins : MonoBehaviour
     public void CardFlip(int multiplier){
         if (multiplier==0){
             Debug.Log("GAME OVER");
-            Reset();
+            GO = true;
+            //Execute reset after 5 seconds
+            Invoke("Reset", 5.0f);
         }
         // To multiplying coins with 1x. 
         if ((!started) && (multiplier == 1)){
@@ -37,6 +41,7 @@ public class Coins : MonoBehaviour
                 levelScript.LevelUp();
             }
         }
+        coinText.GetComponent<TMPro.TextMeshProUGUI>().text = "Coins: " + currentCoins.ToString();
         started = true;
     }
 
@@ -47,6 +52,7 @@ public class Coins : MonoBehaviour
         // Reloading scene 
         Scene scene = SceneManager.GetActiveScene(); 
         SceneManager.LoadScene(scene.name);
+        boardScript.generateBoard();
     }
 
     

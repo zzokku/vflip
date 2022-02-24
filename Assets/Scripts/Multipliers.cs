@@ -39,8 +39,6 @@ public class Multipliers : MonoBehaviour
                i+=1;
             }
             points.Add(xCount);
-            Debug.Log("row multipliers");
-            Debug.Log(xCount);
             points.Add(mineCount);
         }
 
@@ -58,22 +56,15 @@ public class Multipliers : MonoBehaviour
                 }
                 j+=5;
             }
-            Debug.Log("multipliers");
-            Debug.Log(xCount);
             points.Add(xCount);
             points.Add(mineCount);
         }
         return points;
    }
-   // 
-   void assignMultipliers(){
+   // Assign multiplier counts per rows and columns
+   public void assignMultipliers(){
        // Generated points list object.
        points = sumRC();
-       foreach (var item in points)
-       {
-        Debug.Log("the point");
-        Debug.Log(item);   
-       }
        j=0;
        // Iterating through all children (text objects) and assigning xCount and mineCount to them from points List object.
        foreach (Transform child in this.gameObject.transform) {

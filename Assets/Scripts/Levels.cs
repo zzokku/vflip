@@ -13,7 +13,7 @@ public class Levels : MonoBehaviour
     public Coins coinScript;
 
     void Start(){
-        levelText.GetComponent<TMPro.TextMeshProUGUI>().text = Level.ToString();
+        levelText.GetComponent<TMPro.TextMeshProUGUI>().text = "LVL: " + Level.ToString();
     }
     
 
