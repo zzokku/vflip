@@ -8,22 +8,22 @@ public class Coins : MonoBehaviour
     public Levels levelScript;
     public Multipliers multScript;
     public theBoard boardScript;
-    public int currentCoins, flippedOverOne, overOne = 0;
     public GameObject coinText;
-    public bool started = false;
-    public bool GO = false;
+    public int currentCoins, flippedOverOne, overOne = 0;
+    public bool started = false, GO = false;
     
     void Start(){
-        //All multipliers over one to recognize when player has flipped all over one multipliers.
-        foreach (var Multiplier in boardScript.board){
-            if (Multiplier > 1){
+        foreach (var Multiplierr in multScript.currentBoard){
+            if (Multiplierr > 1){
                 overOne+=1;
             }
         }
+        Debug.Log(overOne);
     }
-    
-    //Multiply the current coins
     public void CardFlip(int multiplier){
+        //All multipliers over one to recognize when player has flipped all over one multipliers.
+        Debug.Log("OO: ");
+        Debug.Log(overOne);
         if (multiplier==0){
             Debug.Log("GAME OVER");
             GO = true;
@@ -34,11 +34,14 @@ public class Coins : MonoBehaviour
         if ((!started) && (multiplier == 1)){
             currentCoins += 1;
         }
-        else {
+        else if (multiplier!=1) {
+            //Multiply the current coins
             currentCoins *= multiplier;
             flippedOverOne+=1;
             if (flippedOverOne==overOne){
                 levelScript.LevelUp();
+                coinText.GetComponent<TMPro.TextMeshProUGUI>().text = "Coins: " + currentCoins.ToString();
+                flippedOverOne = 0;
             }
         }
         coinText.GetComponent<TMPro.TextMeshProUGUI>().text = "Coins: " + currentCoins.ToString();

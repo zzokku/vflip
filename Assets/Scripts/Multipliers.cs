@@ -15,14 +15,12 @@ public class Multipliers : MonoBehaviour
     // xCount = count of multipliers over 0, mineCount = count of multipliers < 1
     int i, j , xCount, mineCount;
 
-
-
-    void Start()
-    {
+    void Start(){
         TheBoard.generateBoard();
         currentBoard = TheBoard.board;
         assignMultipliers();
     }
+
     // Getting the sums of multipliers and "mines" per rows and columns.
     public List<int> sumRC(){
         // Rows

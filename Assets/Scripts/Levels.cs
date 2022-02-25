@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 //Avicii - Levels.cs
 
@@ -11,11 +12,9 @@ public class Levels : MonoBehaviour
     public theBoard boardScript;
     public GameObject levelText;
     public Coins coinScript;
-
     void Start(){
-        levelText.GetComponent<TMPro.TextMeshProUGUI>().text = "LVL: " + Level.ToString();
+        levelText.GetComponent<TMPro.TextMeshProUGUI>().text = "LVL: " + Level.ToString();  
     }
-    
 
     public void LevelUp(){
         if (Level == 8){
@@ -27,5 +26,8 @@ public class Levels : MonoBehaviour
         boardScript.CnX[0, 0] += 1;
         boardScript.CnX[1, 0] += 1;
         boardScript.CnX[2, 0] += 1;
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
+        levelText.GetComponent<TMPro.TextMeshProUGUI>().text = "LVL: " + Level.ToString();
     }
 }
