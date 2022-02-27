@@ -28,7 +28,7 @@ public class Coins : MonoBehaviour
             Debug.Log("GAME OVER");
             GO = true;
             //Execute reset after 5 seconds
-            Invoke("Reset", 5.0f);
+            Invoke("Reset", 1.0f);
         }
         // To multiplying coins with 1x. 
         if ((!started) && (multiplier == 1)){

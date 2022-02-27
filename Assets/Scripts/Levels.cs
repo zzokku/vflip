@@ -20,7 +20,7 @@ public class Levels : MonoBehaviour
     public void LevelUp(){
         if (Level == 8){
             levelText.GetComponent<TMPro.TextMeshProUGUI>().text = "U REACHED THE MAX LVL";
-            PlayerPrefs.SetInt("level", 0);
+            PlayerPrefs.SetInt("level", 1);
             coinScript.Reset();
             PlayerPrefs.Save();
         }
