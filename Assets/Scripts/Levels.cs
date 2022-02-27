@@ -24,12 +24,13 @@ public class Levels : MonoBehaviour
             coinScript.Reset();
             PlayerPrefs.Save();
         }
+        Debug.Log("Level UP");
+        // Add more multipliers
+        for (int i=0;i<2;i++){
+            boardScript.CnX[i, 0] += Level;
+        }
         PlayerPrefs.SetInt("level", Level+=1);
         PlayerPrefs.Save();
-        Debug.Log("Level UP");
-        boardScript.CnX[0, 0] += Level;
-        boardScript.CnX[1, 0] += Level;
-        boardScript.CnX[2, 0] += Level;
         Scene scene = SceneManager.GetActiveScene(); 
         SceneManager.LoadScene(scene.name);
         levelText.GetComponent<TMPro.TextMeshProUGUI>().text = "LVL: " + Level.ToString();

@@ -13,7 +13,14 @@ public class Coins : MonoBehaviour
     public bool started = false, GO = false;
     
     void Start(){
-        currentCoins = PlayerPrefs.GetInt("coins", 0);
+        // Getting all multipliers over 1x
+         foreach (var Multiplierr in multScript.currentBoard){
+            if (Multiplierr > 1){
+                overOne+=1;
+            }
+        }
+        Debug.Log(overOne);
+        currentCoins = 0;
     }
     public void CardFlip(int multiplier){
         //All multipliers over one to recognize when player has flipped all over one multipliers.
@@ -30,8 +37,6 @@ public class Coins : MonoBehaviour
         else if (multiplier!=1) {
             //Multiply the current coins
             currentCoins *= multiplier;
-            PlayerPrefs.SetInt("coins", currentCoins);
-            PlayerPrefs.Save();
             flippedOverOne+=1;
             if (flippedOverOne==overOne){
                 levelScript.LevelUp();
@@ -46,7 +51,7 @@ public class Coins : MonoBehaviour
     public void Reset(){
         // Back to base level and coins
         PlayerPrefs.SetInt("level", 1);
-        PlayerPrefs.SetInt("coins", 0);
+        currentCoins = 0;
         PlayerPrefs.Save();
         // Reloading scene 
         Scene scene = SceneManager.GetActiveScene(); 
