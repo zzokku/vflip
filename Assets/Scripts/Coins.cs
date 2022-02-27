@@ -12,6 +12,7 @@ public class Coins : MonoBehaviour
     public int currentCoins, flippedOverOne, overOne = 0;
     public bool started = false, GO = false;
     
+    
     void Start(){
         // Getting all multipliers over 1x
          foreach (var Multiplierr in multScript.currentBoard){
