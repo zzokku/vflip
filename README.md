@@ -1,6 +1,9 @@
 # vflip
 voltorb flip type mini-game from Pokémon SS/HG made in unity.
 
+link to the game:
+https://zzokku.github.io/vflip/voltorbflip/index.html
+
 basic information about the original mini-game:
 https://bulbapedia.bulbagarden.net/wiki/Voltorb_Flip
 
