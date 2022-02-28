@@ -21,6 +21,8 @@ Sum of over 0x multipliers and total amount of 0x multipliers are displayed in e
 
 ![Like this](example.png)
 
+The ends when you hit max level (8). Before that the amount of different multipliers always increases every level.
+
 Code
 ----
 [C# Scripts](Assets/Scripts)
