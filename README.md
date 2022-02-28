@@ -1,25 +1,32 @@
-# vflip
-voltorb flip type mini-game from Pokémon SS/HG made in unity.
+Voltorb Flip mini-game from Pokémon SS/HG recreated in unity.
 ------------------------------------------------------------
+Game: https://zzokku.github.io/vflip/glbuild/index.html 
 
-link to the game:
-https://zzokku.github.io/vflip/wglbuild/index.html
+Caution: The game doesn't scale right on full screen.
 
-CAUTION: THE GAME DOESNT SCALE RIGHT ON FULL SCREEN!
-
-basic information about the original mini-game:
+Info/Rules
+---
+Basic information about the original mini-game:
 https://bulbapedia.bulbagarden.net/wiki/Voltorb_Flip
 
-to inspect or use this project as a whole just:
+The game has four types of multipliers:
+0x,
+1x,
+2x,
+3x.
 
-````
-$ mkdir vflip
-$ git clone https://github.com/zzokku/vflip.git
-````
-and open the folder in unity.
+Objective is to multiply your coins with every over 0x multiplier each level. If you flip card and it holds 0x multiplier the game ends. 
 
-or
+Sum of over 0x multipliers and total amount of 0x multipliers are displayed in each row and column. 
 
-to get look at the source code navigate to Assets -> Scripts.
+![Like this](example.png)
 
-https://github.com/zzokku/vflip/tree/master/Assets/Scripts
+Code
+----
+[C# Scripts](Assets/Scripts)
+
+
+
+
+
+
