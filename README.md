@@ -1,6 +1,6 @@
 Voltorb Flip mini-game from Pokémon SS/HG recreated in unity.
 ------------------------------------------------------------
-Scaling is absolutely fucked up atm lol dont play it!
+GAME IS NOT SCALING RIGHT SO DON'T PLAY IT!
 
 Game: https://zzokku.github.io/vflip/glbuild/index.html 
 
