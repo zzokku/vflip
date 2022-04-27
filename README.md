@@ -19,7 +19,8 @@ The game has four types of multipliers:
 
 Objective is to multiply your coins with every over 0x multiplier each level. If you flip card and it holds 0x multiplier the game ends. 
 
-Sum of over 0x multipliers and total amount of 0x multipliers are displayed in each row and column. 
+Sum of over 0x multipliers and total amount of 0x multipliers are displayed in each row and column.  
+Like this:
 
 ![Like this](example.png)
 
